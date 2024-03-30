@@ -4,15 +4,15 @@
 class Bat
 {
 private:
-	sf::Vector2f m_Position; 
+	sf::Vector2f Position; 
 
 	// A RectangleShape object
-	sf::RectangleShape m_Shape;
+	sf::RectangleShape Shape;
 
-	float m_Speed = 1000.0f;
+	float Speed = 1000.0f;
 
-	bool m_MovingRight = false;
-	bool m_MovingLeft = false;
+	bool MovingRight = false;
+	bool MovingLeft = false;
 
 
 public:

@@ -2,55 +2,58 @@
 
 Bat::Bat(float startX, float startY)
 {
-	m_Position.x = startX;
-	m_Position.y = startY;
+	Position.x = startX;
+	Position.y = startY;
 
-	m_Shape.setSize(sf::Vector2f(200, 5));
-	m_Shape.setPosition(m_Position);
+	Shape.setSize(sf::Vector2f(200, 5));
+	Shape.setPosition(Position);
+	Shape.setFillColor(sf::Color::Green);
+	Shape.setOutlineColor(sf::Color::Cyan);
+	Shape.setOutlineThickness(1.0f);
 	
 }
 
 sf::FloatRect Bat::getPosition()
 {
-	return m_Shape.getGlobalBounds();
+	return Shape.getGlobalBounds();
 }
 
 sf::RectangleShape Bat::getShape()
 {
-	return m_Shape;
+	return Shape;
 }
 
 void Bat::moveLeft()
 {
-	m_MovingLeft = true;
+	MovingLeft = true;
 
 }
 
 void Bat::moveRight()
 {
-	m_MovingRight = true;
+	MovingRight = true;
 }
 
 void Bat::stopLeft()
 {
-	m_MovingLeft = false;
+	MovingLeft = false;
 
 }
 
 void Bat::stopRight()
 {
-	m_MovingRight = false;
+	MovingRight = false;
 }
 
 void Bat::update(sf::Time dt)
 {
-	if (m_MovingLeft) {
-		m_Position.x -= m_Speed * dt.asSeconds();
+	if (MovingLeft) {
+		Position.x -= Speed * dt.asSeconds();
 	}
 
-	if (m_MovingRight) {
-		m_Position.x += m_Speed * dt.asSeconds();
+	if (MovingRight) {
+		Position.x += Speed * dt.asSeconds();
 	}
 
-	m_Shape.setPosition(m_Position);
+	Shape.setPosition(Position);
 }

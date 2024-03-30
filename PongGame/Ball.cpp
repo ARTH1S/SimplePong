@@ -2,50 +2,51 @@
 
 Ball::Ball(float startX, float startY)
 {
-	m_Position.x = startX;
-	m_Position.y = startY;
+	Position.x = startX;
+	Position.y = startY;
 
-	m_Shape.setSize(sf::Vector2f(10, 10));
-	m_Shape.setPosition(m_Position);
+	Shape.setSize(sf::Vector2f(10, 10));
+	Shape.setPosition(Position);
+	Shape.setFillColor(sf::Color::Red);
 }
 
 sf::FloatRect Ball::getPosition()
 {
-	return m_Shape.getGlobalBounds();
+	return Shape.getGlobalBounds();
 }
 
 sf::RectangleShape Ball::getShape()
 {
-	return m_Shape;
+	return Shape;
 }
 
 float Ball::getXVelocity()
 {
-	return m_DirectionX;
+	return DirectionX;
 }
 
 void Ball::reboundSides()
 {
-	m_DirectionX = -m_DirectionX;
+	DirectionX = -DirectionX;
 }
 
 void Ball::reboundBatOrTop()
 {
-	m_DirectionY = -m_DirectionY;
+	DirectionY = -DirectionY;
 
 }
 
 void Ball::reboundBottom()
 {
-	m_Position.y = 0;
-	m_Position.x = 500;
-	m_DirectionY = -m_DirectionY;
+	Position.y = 0;
+	Position.x = 500;
+	DirectionY = -DirectionY;
 }
 
 void Ball::update(sf::Time dt)
 {
-	m_Position.y += m_DirectionY * m_Speed * dt.asSeconds();
-	m_Position.x += m_DirectionX * m_Speed * dt.asSeconds();
+	Position.y += DirectionY * Speed * dt.asSeconds();
+	Position.x += DirectionX * Speed * dt.asSeconds();
 
-	m_Shape.setPosition(m_Position);
+	Shape.setPosition(Position);
 }
