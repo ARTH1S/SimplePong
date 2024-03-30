@@ -10,12 +10,12 @@ Bat::Bat(float startX, float startY)
 	
 }
 
-FloatRect Bat::getPosition()
+sf::FloatRect Bat::getPosition()
 {
 	return m_Shape.getGlobalBounds();
 }
 
-RectangleShape Bat::getShape()
+sf::RectangleShape Bat::getShape()
 {
 	return m_Shape;
 }
@@ -42,7 +42,7 @@ void Bat::stopRight()
 	m_MovingRight = false;
 }
 
-void Bat::update(Time dt)
+void Bat::update(sf::Time dt)
 {
 	if (m_MovingLeft) {
 		m_Position.x -= m_Speed * dt.asSeconds();

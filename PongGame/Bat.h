@@ -1,15 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-using namespace sf;
-
 class Bat
 {
 private:
-	Vector2f m_Position;
+	sf::Vector2f m_Position; 
 
 	// A RectangleShape object
-	RectangleShape m_Shape;
+	sf::RectangleShape m_Shape;
 
 	float m_Speed = 1000.0f;
 
@@ -20,13 +18,13 @@ private:
 public:
 	Bat(float startX, float startY);
 
-	FloatRect getPosition();
-	RectangleShape getShape();
+	sf::FloatRect getPosition();
+	sf::RectangleShape getShape();
 
 	void moveLeft();
 	void moveRight();
 	void stopLeft(); 
 	void stopRight();  
-	void update(Time dt);
+	void update(sf::Time dt); 
 
 };

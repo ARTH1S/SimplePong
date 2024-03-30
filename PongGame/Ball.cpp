@@ -9,12 +9,12 @@ Ball::Ball(float startX, float startY)
 	m_Shape.setPosition(m_Position);
 }
 
-FloatRect Ball::getPosition()
+sf::FloatRect Ball::getPosition()
 {
 	return m_Shape.getGlobalBounds();
 }
 
-RectangleShape Ball::getShape()
+sf::RectangleShape Ball::getShape()
 {
 	return m_Shape;
 }
@@ -42,7 +42,7 @@ void Ball::reboundBottom()
 	m_DirectionY = -m_DirectionY;
 }
 
-void Ball::update(Time dt)
+void Ball::update(sf::Time dt)
 {
 	m_Position.y += m_DirectionY * m_Speed * dt.asSeconds();
 	m_Position.x += m_DirectionX * m_Speed * dt.asSeconds();

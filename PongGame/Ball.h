@@ -1,13 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-using namespace sf;
-
 class Ball
 {
 private:
-	Vector2f m_Position;	
-	RectangleShape m_Shape;
+	sf::Vector2f m_Position;
+	sf::RectangleShape m_Shape;
 
 	float m_Speed = 2500.0f;
 	float m_DirectionX = .2f;
@@ -16,13 +14,13 @@ private:
 public:
 	Ball(float startX, float startY);
 
-	FloatRect getPosition();
-	RectangleShape getShape();
+	sf::FloatRect getPosition();
+	sf::RectangleShape getShape();
 
 	float getXVelocity();
 	void reboundSides();
 	void reboundBatOrTop();
 	void reboundBottom();
-	void update(Time dt);
+	void update(sf::Time dt);
 
 };
