@@ -1,6 +1,8 @@
 # PongGame
 
-A simple game of Pong. You need to kick the ball flying at you, if you miss you lose health. 
+A simple Pong game using SFML library. 
+You need to kick the ball flying at you, if you miss you lose health. 
+
 Control: AD or left-right arrows.
 
 Screenshot from the game:
